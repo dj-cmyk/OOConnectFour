@@ -1,0 +1,195 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F4ECD6;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  /* font-family: 'Roboto', sans-serif; */
+  font-style: italic;
+  color: #847996;
+  font-size: 3em;
+  letter-spacing: .1em;
+  margin-top: 10%;
+  text-align: center;
+}
+
+h2 {
+  /* font-family: 'Roboto', sans-serif; */
+  color: #847996;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: .2em;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+h3 {
+  /* font-family: 'Roboto', sans-serif; */
+  color: #558863;
+  stroke: gray;
+  stroke-width: 2px;
+  text-align: center;
+  text-transform: lowercase;
+  margin: 10px 0;
+}
+
+form {
+  color: rgb(41, 40, 40);
+  margin: 5px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 5%;
+  width: 100%;
+  animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+
+input {
+  width: 75%;
+  text-align: center;
+  margin: 3px;
+}
+
+
+button, .restartbtn {
+  background-color: #847996;
+  color: #F4ECD6;
+  font-size: 1.2em;
+  padding: 5px;
+  border-radius: 5%;
+  margin: 10px;
+}
+
+.playerRef {
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* game board table */
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+  -webkit-animation: swirl-in-fwd 2s ease-out both;
+	        animation: swirl-in-fwd 2s ease-out both;
+}
+
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.slide-in-top {
+  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.piece.p1 {
+  background-color: red;
+}
+
+.piece.p2 {
+  background-color: blue;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+  opacity: 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+.gameover {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes puff-in-center {
+  0% {
+    transform: scale(2);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
